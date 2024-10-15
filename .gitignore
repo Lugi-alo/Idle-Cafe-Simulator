@@ -1,0 +1,32 @@
+# Godot-specific files
+*.import
+*.godot
+*.gd.tmp
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# User-specific files
+.idea/
+.vscode/
+*.user
+*.sublime-workspace
+*.sublime-project
+
+# Build directories
+*.sln
+*.csproj
+*.userprefs
+*.pdb
+*.exe
+*.apk
+*.xcodeproj
+*.xcworkspace
+
+# Cache and generated files
+/.godot/
+/.import/

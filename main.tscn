@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0eq3xn5yegfh"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_hwyy5"]
+[ext_resource type="Texture2D" uid="uid://b02nduotmun7l" path="res://assets/strawberry slice.png" id="2_35xqx"]
+[ext_resource type="Texture2D" uid="uid://bwhvm3255lmu0" path="res://assets/red velvet slice.png" id="3_2judf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i31qb"]
+size = Vector2(114, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4y414"]
+size = Vector2(99, 84)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_hwyy5")
+
+[node name="strawberry_area" type="Area2D" parent="."]
+position = Vector2(306, 213)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="strawberry_area"]
+position = Vector2(86, 86)
+shape = SubResource("RectangleShape2D_i31qb")
+
+[node name="strawberry_slice" type="Sprite2D" parent="strawberry_area"]
+z_index = 10
+position = Vector2(84, 83)
+scale = Vector2(3, 3)
+texture = ExtResource("2_35xqx")
+
+[node name="red_velvet_area" type="Area2D" parent="."]
+position = Vector2(637, 271)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="red_velvet_area"]
+position = Vector2(81.64, 23)
+shape = SubResource("RectangleShape2D_4y414")
+
+[node name="red_velvet_slice" type="Sprite2D" parent="red_velvet_area"]
+z_index = 10
+position = Vector2(75.64, 17)
+scale = Vector2(3.04, 3)
+texture = ExtResource("3_2judf")
+
+[connection signal="input_event" from="strawberry_area" to="." method="_on_strawberry_area_input_event"]
+[connection signal="input_event" from="red_velvet_area" to="." method="_on_red_velvet_area_input_event"]
